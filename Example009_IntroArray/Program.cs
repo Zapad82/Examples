@@ -1,23 +1,25 @@
-﻿/* 
-Найти максимальное значение среди ряда чисел
+﻿/*
+Имеется одномерный массив array из n элементов. Требуется найти элемент, равный find
+    1. Установить счетчик index в позицию 0
+    2. Если array[index] = find, алгоритм завершает работу успешно
+    3. Увеличить index на 1
+    4. Если index < n, то перейти к шагу 2, в противном случае алгоритм завершил работу безуспешно
 */
 
-// Сравниваем значения тройками чисел с помощью функции Max из трех чисел
-int Max(int arg1, int arg2, int arg3)
+int[] array = {1, 12, 31, 4, 15, 1, 16, 17, 18};
+int n = array.Length;
+int find = 15;
+int index = 0;
+
+while(index < n)
 {
-    int result = arg1;
-    if (arg2 > result) result = arg2;
-    if (arg3 > result) result = arg3;
-    return result;
+    if(array[index] == find)
+    {
+        Console.WriteLine(index);
+        //break прерывает работу алгоритма, если в массиве имеется несколько искомых одинаковых значений,
+        //например, 1 на 0 индексе и на 5, и ищем мы число, равное 1.
+        break;
+    }
+    //index = index + 1;
+    index++;
 }
-//               0   1   2   3   4   5   6   7   8
-int [] array = {11, 21, 31, 41, 15, 61, 17, 18, 19};
-
-//Console.WriteLine(array[0]);
-
-int max = Max(
-    Max(array[0], array[1], array[2]),
-    Max(array[3], array[4], array[5]),
-    Max(array[6], array[7], array[8])
-);
-Console.WriteLine(max);
