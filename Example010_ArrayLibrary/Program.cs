@@ -25,10 +25,34 @@ void PrintArray(int[] col)
     }
 }
 
+int IndexOf(int[] collection, int find)
+{
+    int count = collection.Length;
+    int index = 0;
+    // position = -1 устанавливается для того, чтобы понимать, 
+    // что искомого в поиске в массиве числа не существует.
+    int position = -1;
+    while(index < count)
+    {
+        if(collection[index] == find)
+        {
+            position = index;
+            break;
+        }
+        index++;
+    }
+    return position;
+}
 //создание нового массива, который содержит в себе 10 элементов
 int[] array = new int[10];
 
 //вызываем функцию заведения массива
 FillArray(array);
+array[4] = 4;
+array[6] = 4;
 //вызываем функцию печати полученного массива
 PrintArray(array);
+Console.WriteLine();
+
+int pos = IndexOf(array, 4);
+Console.WriteLine(pos);
