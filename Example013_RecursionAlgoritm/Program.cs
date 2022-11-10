@@ -1,4 +1,4 @@
-﻿string[,] table = new string [2 ,5];
+﻿string[,] table = new string[2, 5];
 //Sting.Empty - для строк инициализация происходит такой константой
 // table[0, 0] - первая ячейка первого столбца
 // table[0,0] table[0,1] table[0,2] ... table[0,4] - первая строка
@@ -139,11 +139,11 @@ f(n) = f(n-1) + f(n-2)
 */
 double Fibonacci(int n)
 {
-    if(n == 1 || n == 2) return 1;
-    else return Fibonacci(n-1)+Fibonacci(n-2);
+    if (n == 1 || n == 2) return 1;
+    else return Fibonacci(n - 1) + Fibonacci(n - 2);
 }
 
-for (int i=1; i<50; i++)
+for (int i = 1; i < 50; i++)
 {
     Console.WriteLine($"f({i}) = {Fibonacci(i)}");
 }
